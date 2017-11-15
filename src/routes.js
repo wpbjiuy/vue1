@@ -1,5 +1,6 @@
 export default {
   '/': 'Home',
-  '/about': 'About',
+  '/icomoon': 'Icomoon',
+  '/table': 'Table',
   '/test': 'tm/test'
 }

@@ -13,7 +13,7 @@
     <p class="aitem tk cup" :class="tkCss" v-else @click.prevent="kseth">
       <i class="icon" :class="icon"></i>
       <span class="name">{{name}}</span>
-      <i class="meun icon-angle-down"></i>
+      <i class="meun icon-chevron-down"></i>
     </p>
     <slot></slot>
   </li>
@@ -145,7 +145,7 @@
   }
   .aitem:hover,.bf li.ali:hover > .aitem{
     background-color: #faf9f7;
-    border-left-color:#f43c3c;
+    border-left-color:#57ea26;
   }
   .active {
     color: cornflowerblue;

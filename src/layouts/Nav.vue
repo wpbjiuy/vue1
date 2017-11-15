@@ -33,19 +33,24 @@
 	var links = [
     		{
     			href:'/',
-    			icon:'icon-brand154',
+    			icon:'icon-home',
     			name:'home'
     		},
+            {   
+                href:'/icomoon',
+                name:'icon 图标',
+                icon:'icon-IcoMoon'
+            },
     		{
-    			name:'Tm',
-    			icon:'icon-cubes',
+    			name:'表格',
+    			icon:'icon-table2',
     			next:[
     				{
-    					href:'/about',
-    					name:'About'
+    					href:'/table',
+    					name:'table'
     				},
     				{
-    					icon:'icon-cubes',
+    					icon:'icon-cool2',
     					name:'Aboutzz',
     					next:[
     						{
@@ -65,15 +70,15 @@
     			]
     		},
     		{
-    			name:'Tm22',
-    			icon:'icon-cubes',
+    			name:'布局',
+    			icon:'icon-delicious',
     			next:[
     				{
     					href:'/test1',
     					name:'Test1'
     				},
     				{
-    					icon:'icon-cubes',
+    					icon:'icon-cool2',
     					name:'About',
     					next:[
     						{

@@ -25,14 +25,14 @@ html,body,.container{
 	border-right:1px solid #ddd;
 	background-color:#eee;
 }
-.box-right{
+.box-main{
 	margin-left:200px;
 }
 
 .bf .box-left{
 	width:45px;
 }
-.bf .box-right{
+.bf .box-main{
 	margin-left:45px;
 }
 
