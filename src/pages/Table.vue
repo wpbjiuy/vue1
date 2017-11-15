@@ -7,12 +7,12 @@
 
 <script>
 	import MainLayout from '../layouts/Main.vue';
-	import TbaleOne from '../components/TableOne.vue';
+	import TableOne from '../components/TableOne.vue';
 
 	export default {
 		components: {
 			MainLayout,
-			TbaleOne
+			TableOne
 		},
 		data:function(){
 			return {

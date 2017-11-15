@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 	export default {
 		props: {
 			ths: {
@@ -51,8 +52,14 @@
 <style scoped>
 	table{
 		border:none;
-		width:100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+		width:98%;
+		margin:0 auto;
 		color:#666;
+		text-align: left;
+		line-height: 32px;
+		font-size:14px;
 	}
 	thead{
 		border-bottom:1px solid #555;
@@ -61,6 +68,11 @@
 	tr{
 		border-bottom:1px solid #ddd;
 	}
-	th{}
+	tbody tr:nth-child(2n+1){
+		background-color:#eee;
+	}
+	th{
+		color: #e8722d;
+	}
 	td{}
 </style>
