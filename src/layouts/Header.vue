@@ -3,8 +3,8 @@
 		<a href="/" class="logo"><img src="/img/logo.png"></a>
 		<a href="javascript:void(0);" class="nvamenu" @click="switchoverStyle"><i class="icon-menu5"></i></a>
 		<div class="right">
-			<a href="javascript:void(0);" class="clo"><i class="icon-gear"></i></a>
-			<a href="javascript:void(0);" class="clo"><i class="icon-log-out"></i></a>
+			<a href="javascript:void(0);" class="clo"><i class="icon-cog"></i></a>
+			<a href="javascript:void(0);" class="clo"><i class="icon-enter"></i></a>
 		</div>
 	</div>
 </template>

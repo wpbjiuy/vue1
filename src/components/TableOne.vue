@@ -7,15 +7,22 @@
 		</thead>
 		<tbody>
 			<tr v-for="data in datas">
-				<td v-for="h in cThs">{{data[h.key]}}</td>
+				<td v-for="(h, $i) in cThs" v-if="$i != cThs.length-1">{{data[h.key]}}</td>
+				<td v-if="controlers && controlers.length">
+					<v-button class="btn-default" v-for="c in controlers" v-on:cClick="_self[c.methodName]?_self[c.methodName](data):hit(c.methodName)">{{c.name}}</v-button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
 </template>
 
 <script>
+	import VButton from './VButton.vue'
 
 	export default {
+		components:{
+			VButton
+		},
 		props: {
 			ths: {
 				type:Array,
@@ -35,15 +42,19 @@
 		},
 		methods:{
 			update(data){
-				console.log(data)
+				console.log('update',data)
 			},
 			delete(data){
-				console.log(data)
+				console.log('delete',data)
+			},
+			hit(name){
+				console.log(name+' is not method.');
 			}
 		},
 		computed:{
-			cThs(){ console.log(this.ths)
-				return this.controlers ? this.ths.push({name:'操作'}) : this.ths;
+			cThs(){
+				this.controlers ? this.ths.push({name:'操作',key:'f'}) : '';
+				return this.ths;
 			}
 		}
 	}
