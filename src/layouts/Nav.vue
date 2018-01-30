@@ -96,7 +96,12 @@
     					name:'Test2'
     				}
     			]
-    		}
+    		},
+            {
+                name:'消息',
+                icon:'icon-bubble',
+                href:'/message'
+            }
     	]
 
   export default {

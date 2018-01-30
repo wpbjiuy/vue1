@@ -9,7 +9,7 @@
 			<tr v-for="data in datas">
 				<td v-for="(h, $i) in cThs" v-if="$i != cThs.length-1">{{data[h.key]}}</td>
 				<td v-if="controlers && controlers.length">
-					<v-button class="btn-default" v-for="c in controlers" v-on:cClick="_self[c.methodName]?_self[c.methodName](data):hit(c.methodName)">{{c.name}}</v-button>
+					<v-button :class="'btn-default'" v-for="c in controlers" v-on:cClick="_self[c.methodName]?_self[c.methodName](data):hit(c.methodName)">{{c.name}}</v-button>
 				</td>
 			</tr>
 		</tbody>
