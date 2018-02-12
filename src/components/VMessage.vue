@@ -23,7 +23,7 @@
 		},
 		mounted: function(){
 			this.$nextTick(function(e){
-				this.$emit('load', this.$el);
+				setTimeout(() => this.$emit('load', this.$el), 200);
 			})
 		}
 	}
@@ -31,7 +31,7 @@
 
 <style scoped>
 	.msg {
-		display: inline-block;
+		display: block;
 		padding:10px 15px;
 		background-color: #fff;
 		border:1px solid #f1f1f1;
@@ -47,7 +47,7 @@
 		transition:bottom 0.6s;
 		transform: rotateX(0deg);
 		z-index: 99;
-		animation: showmsg 1.6s;
+		animation: showmsg 0.6s;
 		border-radius: 2px;
 		word-break: break-all;
 	}
@@ -57,7 +57,7 @@
 			right:100%;
 			transform: rotateX(20deg);
 		}
-		20%{
+		80%{
 			right:10px;
 			transform: rotateX(90deg);
 		}

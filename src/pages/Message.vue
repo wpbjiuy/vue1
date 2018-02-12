@@ -19,7 +19,7 @@
 		data(){
 			return {
 				msgs:[],
-				mn:10000
+				mn:1
 			}
 		},
 		methods:{
@@ -31,14 +31,14 @@
 			addmsg(){
 				this.msgs.push({
 					type:'msg',
-					txt:'add msg'+this.mn++,
+					txt:'add msg fdsafdsafds'+this.mn++,
 					bottom:10,
 					isShow:true
 				});
 			},
-			setMsgTop(ele, idx){ 
+			setMsgTop(ele, idx){ console.log({0:ele})
 				var ah = ele ? ele.clientHeight : this.msgs[idx].height;
-
+				console.log(ah)
 				idx = idx === undefined ? this.msgs.length-2 : idx
 
 				for (var i = idx; i >= 0 ; i--) { 
