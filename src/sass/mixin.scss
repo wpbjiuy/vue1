@@ -1,0 +1,11 @@
+@mixin addPrefix($property, $value){
+	#{$property}: $value;
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+}
+
+@mixin borderBox{
+	@include addPrefix(box-sizing, border-box);
+}

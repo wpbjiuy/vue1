@@ -1,0 +1,75 @@
+@import 'var';
+@import 'mixin';
+
+*{
+	margin:0;
+	padding:0;
+	@include borderBox;
+}
+html,body,.container{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	background-color: $bgCor;
+}
+.header{
+	height:$topH;
+	line-height: $topH;
+	background-color:#2dc3e8;
+}
+.mx{
+	height:calc(100% - 45px);
+
+	> div{
+		height:100%;
+	}
+}
+.box-left{
+	width:$leftW;
+	float:left;
+	border-right:1px solid #ddd;
+	background-color:#eee;
+
+	> div{
+		margin-left:3px;
+		width:calc(100% - 3px);
+		height:100%;
+		background-color: #fff;
+	}
+}
+.box-main{
+	margin-left:$leftW;
+	overflow: auto;
+}
+
+.bf {
+	.box-left{
+		width:45px;
+	}
+
+	.box-main{
+		margin-left:45px;
+	}
+}
+
+.bbox{
+	@include borderBox;
+}
+
+.row{
+	width:100%;
+	overflow:hidden;
+	zoom:1;
+}
+
+[class*='col-']{
+	float:left;
+	display:block;
+}
+
+@for $i from 1 through 12 {
+	$w:100 / (12/$i) * 1%;
+
+  	.col-#{$i} { width: $w; }
+  	.col-mgleft-#{$i} { margin-left: $w; }
+}

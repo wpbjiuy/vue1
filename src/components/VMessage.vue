@@ -42,9 +42,9 @@
 		line-height: 22px;
 		color: #888;
 		position: fixed;
-		bottom: 20px;
+		top: 45px;
 		right: 10px;
-		transition:bottom 0.6s;
+		transition:top 0.6s;
 		transform: rotateX(0deg);
 		z-index: 99;
 		animation: showmsg 0.6s;

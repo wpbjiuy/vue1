@@ -2,6 +2,7 @@ export default {
   '/': 'Home',
   '/icomoon': 'Icomoon',
   '/table': 'Table',
-  '/test': 'tm/test',
-  '/message': 'Message'
+  '/message': 'Message',
+  '/grid': 'Grid',
+  '/test': 'tm/test'
 }

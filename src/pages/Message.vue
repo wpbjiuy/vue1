@@ -1,7 +1,7 @@
 <template>
 	<main-layout class="wm">
 		<v-button class="btn-default" @cClick="addmsg">Add msg</v-button>
-		<v-message v-for="(msg, $i) in msgs" v-if="msg.isShow" @remove="remove($el, msg, $i)" @load="setMsgTop" :style="{bottom:msg.bottom+'px'}"><p>{{msg.txt}}</p></v-message>
+		<v-message v-for="(msg, $i) in msgs" v-if="msg.isShow" @remove="remove($el, msg, $i)" @load="setMsgTop" :style="{top:msg.top+'px'}"><p>{{msg.txt}}</p></v-message>
 	</main-layout>
 </template>
 
@@ -23,7 +23,7 @@
 			}
 		},
 		methods:{
-			remove(e, msg, i){
+			remove(e, msg, i){ 
 				msg.isShow = false;
 				this.setMsgTop(null, i);
 				this.msgs.splice(i,1);
@@ -32,20 +32,20 @@
 				this.msgs.push({
 					type:'msg',
 					txt:'add msg fdsafdsafds'+this.mn++,
-					bottom:10,
+					top:45,
 					isShow:true
 				});
 			},
-			setMsgTop(ele, idx){ console.log({0:ele})
+			setMsgTop(ele, idx){ console.log('ele:',ele)
 				var ah = ele ? ele.clientHeight : this.msgs[idx].height;
 				console.log(ah)
 				idx = idx === undefined ? this.msgs.length-2 : idx
 
 				for (var i = idx; i >= 0 ; i--) { 
 					if(ele)
-						this.msgs[i].bottom += ah+10
+						this.msgs[i].top += ah+10
 					else
-						this.msgs[i].bottom -= ah+10
+						this.msgs[i].top -= ah+10
 				}
 				if(ele){
 					this.msgs[this.msgs.length-1].ele = ele;

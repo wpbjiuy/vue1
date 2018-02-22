@@ -74,22 +74,8 @@
     			icon:'icon-delicious',
     			next:[
     				{
-    					href:'/test1',
-    					name:'Test1'
-    				},
-    				{
-    					icon:'icon-cool2',
-    					name:'About',
-    					next:[
-    						{
-		    					href:'/aboutx',
-		    					name:'Aboutx'
-		    				},
-		    				{
-		    					href:'/testx',
-		    					name:'Testx'
-		    				}
-    					]
+    					href:'/grid',
+    					name:'Grid'
     				},
     				{
     					href:'/test2',

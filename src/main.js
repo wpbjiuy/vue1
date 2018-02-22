@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import routes from './routes'
+require('./sass/common.scss')
 
 const app = new Vue({
   el: '#app',
