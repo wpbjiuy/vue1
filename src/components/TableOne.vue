@@ -9,7 +9,7 @@
 			<tr v-for="data in datas">
 				<td v-for="(h, $i) in cThs" v-if="$i != cThs.length-1">{{data[h.key]}}</td>
 				<td v-if="controlers && controlers.length">
-					<v-button :class="'btn-default'" v-for="c in controlers" v-on:cClick="_self[c.methodName]?_self[c.methodName](data):hit(c.methodName)">{{c.name}}</v-button>
+					<span :class="'btn-default'" v-for="c in controlers" @click="_self[c.methodName]?_self[c.methodName](data):hit(c.methodName)">{{c.name}}</span>
 				</td>
 			</tr>
 		</tbody>
@@ -17,12 +17,8 @@
 </template>
 
 <script>
-	import VButton from './VButton.vue'
 
 	export default {
-		components:{
-			VButton
-		},
 		props: {
 			ths: {
 				type:Array,
@@ -86,4 +82,12 @@
 		color: #e8722d;
 	}
 	td{}
+
+	[class*="btn-"]{
+		display: initial;
+		margin-right:15px;
+	}
+	[class*="btn-"]:last-child{
+		margin-right:0;
+	}
 </style>

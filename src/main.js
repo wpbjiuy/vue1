@@ -1,6 +1,10 @@
 import Vue from 'vue'
+import mavonEditor from 'mavon-editor'
 import routes from './routes'
+
 require('./sass/common.scss')
+
+Vue.use(mavonEditor)
 
 const app = new Vue({
   el: '#app',

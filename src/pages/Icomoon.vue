@@ -1,6 +1,6 @@
 <template>
   <main-layout>
-    <iframe src="lib/icon/demo.html" width="100%" height="100%" style="border:0;"></iframe>
+    <iframe src="lib/icon/demo.html" width="100%" height="99%" style="border:0;"></iframe>
   </main-layout>
 </template>
 

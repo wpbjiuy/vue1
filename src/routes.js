@@ -2,7 +2,9 @@ export default {
   '/': 'Home',
   '/icomoon': 'Icomoon',
   '/table': 'Table',
-  '/message': 'Message',
+  '/popup': 'Popup',
   '/grid': 'Grid',
+  '/mavon-editor': 'MavonEditor',
+  '/vue-editor': 'VueEditor',
   '/test': 'tm/test'
 }

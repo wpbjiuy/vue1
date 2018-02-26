@@ -8,11 +8,12 @@
 			type:{
 				type:String,
 				default:'msg'
-			},		//msg, alert, confirm
+			},
 			isShow:{
 				type:Boolean,
 				default:true
 			},
+			oMsg:Object,
 			txt:String,
 			title:String
 		},
@@ -23,8 +24,10 @@
 		},
 		mounted: function(){
 			this.$nextTick(function(e){
-				setTimeout(() => this.$emit('load', this.$el), 200);
+				this.$emit('load', this.$el);
 			})
+
+			setTimeout(() => {this.$emit('remove')}, 6000);
 		}
 	}
 </script>
@@ -54,15 +57,9 @@
 
 	@keyframes showmsg{
 		0%{
-			right:100%;
-			transform: rotateX(20deg);
-		}
-		80%{
-			right:10px;
 			transform: rotateX(90deg);
 		}
 		100%{
-			right:10px;
 			transform: rotateX(0deg);
 		}
 	}

@@ -73,3 +73,44 @@ html,body,.container{
   	.col-#{$i} { width: $w; }
   	.col-mgleft-#{$i} { margin-left: $w; }
 }
+
+
+/* button */
+[class^="btn-"],[class*=" btn-"]{
+	display: inline-block;
+	padding:5px 10px;
+	font-size:12px;
+	color:#fff;
+	cursor: pointer;
+	border:1px solid #ddd;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+
+	@include addPrefix(text-shadow, 1px 1px 1px #666)
+}
+[class^="btn-"]:hover,[class*=" btn-"]:hover{
+	box-shadow: 0 0 10px #fff inset;
+}
+[class^="btn-"]:active,[class*=" btn-"]:active{
+	box-shadow: 1px 1px 4px #999 inset;
+}
+.btn-default{
+	background-color:#eee;
+	color:#444;
+	@include addPrefix(text-shadow, 1px 1px 1px #fff)
+}
+
+.btn-default:hover{}
+.btn-default:active{}
+
+.btn-ok{
+	background-color:#2dc3e8;
+	border-color:#2dc3e8;
+}
+
+.btn-delete{
+	background-color:#faa;
+}

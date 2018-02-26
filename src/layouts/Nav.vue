@@ -84,9 +84,23 @@
     			]
     		},
             {
-                name:'消息',
-                icon:'icon-bubble',
-                href:'/message'
+                name:'弹窗',
+                icon:'icon-bubbles4',
+                href:'/popup'
+            },
+            {
+                name:'编辑器',
+                icon:'icon-edit-3',
+                next: [
+                    {
+                        name:'mavon-editor',
+                        href:'/mavon-editor'
+                    },
+                    {
+                        name:'vue2-editor',
+                        href:'/vue-editor'
+                    }
+                ]
             }
     	]
 
