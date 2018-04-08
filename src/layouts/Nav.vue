@@ -5,14 +5,14 @@
 			<ul class="nav" @mouseleave="rgNum">
 				<v-link class="ali" v-for="(item, $i) of links" :href="item.href" :name="item.name" :index="$i+''" :key="$i+''" :icon="item.icon" :showNextNum="showNextNum" :firstShowNextNum="firstShowNextNum" @setn="setNextNum">
 
-				<transition v-on:enter="show"	v-on:leave="hide"	name="fade">
+				<transition @enter="show" @after-enter="showed" @leave="hide" @after-leave="hideed" name="fade">
 
 					<ul v-if="item.next" v-show="showNextNum == $i" >
 
 						<v-link v-for="(item, $j) of item.next" :href="item.href" :name="item.name" :index="$i+'-'+$j" 
 						:key="$i+'-'+$j" :showNextNum="showNextAsNum" :firstShowNextNum="firstShowNextAsNum" @setn="setNextAsNum">
 
-							<transition v-on:enter="show"	v-on:leave="hide"	name="fade">
+							<transition @enter="show" @after-enter="showed" @leave="hide" @after-leave="hideed" name="fade">
 
 								<ul class="nextas" v-if="item.next" v-show="showNextAsNum == $i+'-'+$j">
 
@@ -159,23 +159,27 @@
     		if(el.className.indexOf('nextas') >= 0){
     			var elPs = el.parentNode.parentNode;
     			elPs.style.height = 'auto';
-    			if(elPs.setHt) clearTimeout(el.setHt);
-    			elPs.setHt = setTimeout(() => {
-    				elPs.style.height = elPs.scrollHeight+'px';
-    			},450)
     		}
     	},
+        showed (el) {
+            if(el.className.indexOf('nextas') >= 0){
+                var elPs = el.parentNode.parentNode;
+                elPs.style.height = elPs.scrollHeight+'px';
+            }
+        },
     	hide (el) {
     		el.style.height = '0px';
     		if(el.className.indexOf('nextas') >= 0){
     			var elPs = el.parentNode.parentNode;
     			elPs.style.height = 'auto';
-    			if(elPs.setHt) clearTimeout(el.setHt);
-    			elPs.setHt = setTimeout(() => {
-    				elPs.style.height = elPs.scrollHeight+'px';
-    			},450)
     		}
-    	}
+    	},
+        hideed (el) {
+            if(el.className.indexOf('nextas') >= 0){
+                var elPs = el.parentNode.parentNode;
+                elPs.style.height = elPs.scrollHeight+'px';
+            }
+        }
     }
   }
 </script>
