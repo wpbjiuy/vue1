@@ -30,79 +30,7 @@
 <script>
 	import VLink from '../components/VLink.vue'
 
-	var links = [
-    		{
-    			href:'/',
-    			icon:'icon-home',
-    			name:'home'
-    		},
-            {   
-                href:'/icomoon',
-                name:'icon 图标',
-                icon:'icon-IcoMoon'
-            },
-    		{
-    			name:'表格',
-    			icon:'icon-table2',
-    			next:[
-    				{
-    					href:'/table',
-    					name:'table'
-    				},
-    				{
-    					icon:'icon-cool2',
-    					name:'Aboutzz',
-    					next:[
-    						{
-		    					href:'/aboutxz',
-		    					name:'Aboutxz'
-		    				},
-		    				{
-		    					href:'/testxz',
-		    					name:'Testxz'
-		    				}
-    					]
-    				},
-    				{
-    					href:'/test',
-    					name:'Test'
-    				}
-    			]
-    		},
-    		{
-    			name:'布局',
-    			icon:'icon-delicious',
-    			next:[
-    				{
-    					href:'/grid',
-    					name:'Grid'
-    				},
-    				{
-    					href:'/test2',
-    					name:'Test2'
-    				}
-    			]
-    		},
-            {
-                name:'弹窗',
-                icon:'icon-bubbles4',
-                href:'/popup'
-            },
-            {
-                name:'编辑器',
-                icon:'icon-edit-3',
-                next: [
-                    {
-                        name:'mavon-editor',
-                        href:'/mavon-editor'
-                    },
-                    {
-                        name:'vue2-editor',
-                        href:'/vue-editor'
-                    }
-                ]
-            }
-    	]
+	var links = require('../data/vlinks.json')
 
   export default {
     components: {
@@ -153,7 +81,7 @@
     		// this.showNextAsNum = '-1';
     		this.showNextNum = '-1';
     	},
-    	show (el) {
+    	show (el) { 
     		el.style.height = '0px';
     		el.style.height = el.scrollHeight+'px';
     		if(el.className.indexOf('nextas') >= 0){
@@ -161,7 +89,7 @@
     			elPs.style.height = 'auto';
     		}
     	},
-        showed (el) {
+        showed (el) { 
             if(el.className.indexOf('nextas') >= 0){
                 var elPs = el.parentNode.parentNode;
                 elPs.style.height = elPs.scrollHeight+'px';
@@ -197,6 +125,7 @@
 	.nav{
 		width:100%;
 		padding-bottom:20px;
+        user-select: none;
 	}
 	.nav li{
 		list-style: none;

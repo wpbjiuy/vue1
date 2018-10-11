@@ -90,6 +90,7 @@
           routes[this.href],
           this.href
         )
+        this.kseth();
       },
       kseth () {
         if(this.$el.classList.contains('ali') && this.$root.isBf) return;
